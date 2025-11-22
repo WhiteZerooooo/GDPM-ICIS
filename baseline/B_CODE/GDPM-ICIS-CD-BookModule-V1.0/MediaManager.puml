@@ -1,0 +1,285 @@
+@startuml MediaManager
+
+class HandleRemoveItemSubmit {
++ RemoveItemView view
++ void setView(RemoveItemView)
++ void actionPerformed(ActionEvent)
+- boolean isSerialNumberExist(JsonArray,String)
+}
+
+
+class Disc {
+- String ProducerName
+- String ProducionYear
+- String VedioLength
++ <<Create>> Disc()
++ <<Create>> Disc(String,String,String,String,String,String,String)
++ void setProducerName(String)
++ void setProducionYear(String)
++ void setVedioLength(String)
++ String getProducerName()
++ String getProducionYear()
++ String getVedioLength()
+}
+
+
+class ItemListView {
+- JButton submit
+- JTextArea showItem
+- HandleItemListSubmit handleItemListSubmit
++ <<Create>> ItemListView()
++ JButton getSubmit()
++ void setSubmit(JButton)
++ JTextArea getShowItem()
++ void setShowItem(JTextArea)
++ HandleItemListSubmit getHandleItemListSubmit()
++ void setHandleItemListSubmit(HandleItemListSubmit)
+- void initView()
+- void registerListener()
+}
+
+
+class Item {
+- String SerialNumber
+- String Title
+- String Author
+- String Rating
++ <<Create>> Item()
++ <<Create>> Item(String,String,String,String)
++ void setSerialNumber(String)
++ void setTitle(String)
++ void setAuthor(String)
++ void setRating(String)
++ String getSerialNumber()
++ String getTitle()
++ String getAuthor()
++ String getRating()
+}
+
+
+class MainView {
++ JTabbedPane tabbedPane
++ ItemListView itemListView
++ AddItemView addItemView
++ RemoveItemView removeItemView
++ ItemVisitView itemVisitView
++ EditItemView editItemView
++ <<Create>> MainView()
++ void initSetting()
++ void initView()
++ {static} void checkDataFile()
+}
+
+
+class EditItemView {
+- JComboBox<String> comboBox
+- JTextField inputItemSerialNumber
+- JTextField inputItemTitle
+- JTextField inputItemAuthor
+- JTextField inputItemRating
+- JTextField inputItemSelect1
+- JTextField inputItemSelect2
+- JTextField inputItemSelect3
+- JButton submit
+- JTextField submitHint
+- HandleEditItemSubmit handleEditItemSubmit
+- ItemVisitView visitView
++ <<Create>> EditItemView()
++ JComboBox<String> getComboBox()
++ void setComboBox(JComboBox<String>)
++ JTextField getInputItemSerialNumber()
++ void setInputItemSerialNumber(JTextField)
++ JTextField getInputItemTitle()
++ void setInputItemTitle(JTextField)
++ JTextField getInputItemAuthor()
++ void setInputItemAuthor(JTextField)
++ JTextField getInputItemRating()
++ void setInputItemRating(JTextField)
++ JTextField getInputItemSelect1()
++ void setInputItemSelect1(JTextField)
++ JTextField getInputItemSelect2()
++ void setInputItemSelect2(JTextField)
++ JTextField getInputItemSelect3()
++ void setInputItemSelect3(JTextField)
++ JButton getSubmit()
++ void setSubmit(JButton)
++ JTextField getSubmitHint()
++ void setSubmitHint(JTextField)
++ HandleEditItemSubmit getHandleEditItemSubmit()
++ void setHandleEditItemSubmit(HandleEditItemSubmit)
++ ItemVisitView getVisitView()
++ void setVisitView(ItemVisitView)
++ void initView()
+- void registerListener()
+}
+
+
+class Program {
++ {static} void main(String[])
++ {static} void initGlobalFont(Font)
+}
+
+class AddItemView {
+- JComboBox<String> comboBox
+- JTextField inputItemSerialNumber
+- JTextField inputItemTitle
+- JTextField inputItemAuthor
+- JTextField inputItemRating
+- JTextField inputItemSelect1
+- JTextField inputItemSelect2
+- JTextField inputItemSelect3
+- JButton submit
+- JTextField submitHint
+- HandleAddItemSubmit handleAddItemSubmit
++ <<Create>> AddItemView()
++ JComboBox<String> getComboBox()
++ void setComboBox(JComboBox<String>)
++ JTextField getInputItemSerialNumber()
++ void setInputItemSerialNumber(JTextField)
++ JTextField getInputItemTitle()
++ void setInputItemTitle(JTextField)
++ JTextField getInputItemAuthor()
++ void setInputItemAuthor(JTextField)
++ JTextField getInputItemRating()
++ void setInputItemRating(JTextField)
++ JTextField getInputItemSelect1()
++ void setInputItemSelect1(JTextField)
++ JTextField getInputItemSelect2()
++ void setInputItemSelect2(JTextField)
++ JTextField getInputItemSelect3()
++ void setInputItemSelect3(JTextField)
++ JButton getSubmit()
++ void setSubmit(JButton)
++ JTextField getSubmitHint()
++ void setSubmitHint(JTextField)
++ HandleAddItemSubmit getHandleAddItemSubmit()
++ void setHandleAddItemSubmit(HandleAddItemSubmit)
+- void initView()
+- void registerListener()
+}
+
+
+class Atlas {
+- String Publisher
+- String ISBN
+- String Pages
++ <<Create>> Atlas()
++ <<Create>> Atlas(String,String,String,String,String,String,String)
++ void setPublisher(String)
++ void setISBN(String)
++ void setPages(String)
++ String getPublisher()
++ String getISBN()
++ String getPages()
+}
+
+
+class ItemVisitView {
+- JComboBox<String> comboBox
+- JTextField inputItemInfo
+- JButton submit
+- JTextArea showItem
+- List<Item> editItemList
+- HandleItemVisitSubmit handleItemVisitSubmit
+- EditItemView editView
++ <<Create>> ItemVisitView()
++ JComboBox<String> getComboBox()
++ void setComboBox(JComboBox<String>)
++ JTextField getInputItemInfo()
++ void setInputItemInfo(JTextField)
++ JButton getSubmit()
++ void setSubmit(JButton)
++ JTextArea getShowItem()
++ void setShowItem(JTextArea)
++ List<Item> getEditItemList()
++ void setEditItemList(List<Item>)
++ HandleItemVisitSubmit getHandleItemVisitSubmit()
++ void setHandleItemVisitSubmit(HandleItemVisitSubmit)
++ EditItemView getEditView()
++ void setEditView(EditItemView)
+- void initView()
+- void registerListener()
+}
+
+
+class HandleItemVisitSubmit {
++ ItemVisitView view
++ void setView(ItemVisitView)
++ void actionPerformed(ActionEvent)
+}
+
+
+class HandleAddItemSubmit {
++ AddItemView view
++ void setView(AddItemView)
++ void actionPerformed(ActionEvent)
+- boolean isSerialNumberExist(JsonArray,String)
+}
+
+
+class Drawing {
+- String Nationality
+- String WorkLength
+- String WorkWidth
++ <<Create>> Drawing()
++ <<Create>> Drawing(String,String,String,String,String,String,String)
++ void setNationality(String)
++ void setWorkLength(String)
++ void setWorkWidth(String)
++ String getNationality()
++ String getWorkLength()
++ String getWorkWidth()
+}
+
+
+class HandleItemListSubmit {
++ ItemListView view
++ void setView(ItemListView)
++ void actionPerformed(ActionEvent)
+- void outputDataInfo(JsonArray,String,String,String,String,String,String)
+}
+
+
+class HandleEditItemSubmit {
++ EditItemView view
++ void setView(EditItemView)
++ void actionPerformed(ActionEvent)
+- boolean isSerialNumberExist(JsonArray,String)
+}
+
+
+class RemoveItemView {
+- JTextField inputItemSerialNumber
+- JButton submit
+- JTextField submitHint
+- HandleRemoveItemSubmit handleRemoveItemSubmit
++ <<Create>> RemoveItemView()
++ JTextField getInputItemSerialNumber()
++ void setInputItemSerialNumber(JTextField)
++ JButton getSubmit()
++ void setSubmit(JButton)
++ JTextField getSubmitHint()
++ void setSubmitHint(JTextField)
++ HandleRemoveItemSubmit getHandleRemoveItemSubmit()
++ void setHandleRemoveItemSubmit(HandleRemoveItemSubmit)
++ void initView()
+- void registerListener()
+}
+
+
+
+
+Item <|-- Disc
+Item <|-- Atlas
+Item <|-- Drawing
+ItemListView <-- HandleItemListSubmit
+EditItemView <-- HandleEditItemSubmit
+AddItemView <-- HandleAddItemSubmit
+ItemVisitView <-- HandleItemVisitSubmit
+RemoveItemView <-- HandleRemoveItemSubmit
+MainView <-- ItemListView
+MainView <-- EditItemView
+MainView <-- AddItemView
+MainView <-- ItemVisitView
+MainView <-- RemoveItemView
+@enduml

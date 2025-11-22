@@ -1,0 +1,45 @@
+{
+	"atlas": [{
+		"SerialNumber": "1",
+		"Title": "假如给我三天光明",
+		"Author": "海伦·凯勒",
+		"Rating": "一般",
+		"Publisher": "佛山出版社",
+		"ISBN": "JRGW-THREEDAY-1234",
+		"Pages": "126"
+	}, {
+		"SerialNumber": "2",
+		"Title": "假如给你三天光明",
+		"Author": "凯勒·海伦",
+		"Rating": "儿童",
+		"Publisher": "佛山出版社",
+		"ISBN": "JRGN-THREEDAY-5678",
+		"Pages": "154"
+	}],
+	"disc": [{
+		"ProducerName": "作者2",
+		"ProducionYear": "2024",
+		"VedioLength": "9457",
+		"SerialNumber": "5",
+		"Title": "假如不用学高数",
+		"Author": "作者2",
+		"Rating": "成人"
+	}, {
+		"ProducerName": "作者1",
+		"ProducionYear": "2024",
+		"VedioLength": "651",
+		"SerialNumber": "3",
+		"Title": "高数速通教程",
+		"Author": "作者1",
+		"Rating": "成人"
+	}],
+	"drawing": [{
+		"SerialNumber": "4",
+		"Title": "清明上河图",
+		"Author": "张择端",
+		"Rating": "一般",
+		"Nationality": "中国",
+		"WorkLength": "150",
+		"WorkWidth": "120"
+	}]
+}
